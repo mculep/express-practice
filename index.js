@@ -1,5 +1,5 @@
-const http = require(http);
-const express = require(express);
+const http = require("http");
+const express = require("express");
 const app = express();
 const server = http.createServer(app);
 const es6Renderer = require("express-es6-template-engine");
@@ -11,6 +11,10 @@ app.set('view engine', 'html');
 PORT = 3000;
 HOST = "0.0.0.0";
 
+app.get("/", (req,res) =>{
+    res.send(`<h1>Hello</h1>`)
+})
+
 server.listen(PORT, HOST, () => {
     console.log(`Running on ${PORT}`)
-}
+})
